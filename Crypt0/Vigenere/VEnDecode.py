@@ -1,8 +1,10 @@
 
 
-# Encode the message by shifting each character by the offset
-# of a character in the key.
 def encode(plaintext, key):
+    """Encodes plaintext
+    Encode the message by shifting each character by the offset
+    of a character in the key.
+    """
 
     ciphertext = ""
     i, j = 0, 0  # key, plaintext indices
@@ -28,9 +30,8 @@ def encode(plaintext, key):
 
     return ciphertext
 
-
-# Decode the message with a key.
 def decode(ciphertext, key):
+    """Decode ciphertext message with a key."""
 
     plaintext = ""
     i, j = 0, 0  # key, ciphertext indices
