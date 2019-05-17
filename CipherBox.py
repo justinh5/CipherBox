@@ -32,9 +32,12 @@ class MainController(Tk):
         self.current_frame = Frame()
         self.show_frame("MainPage")
 
-    # Show a frame given the page name and communicate to the frames
-    # with an optional option parameter
+
     def show_frame(self, page_name):
+        """Change current page
+        Show a frame given the page name and communicate to the frames
+        with an optional option parameter
+        """
         self.current_frame.grid_forget()   # clear frame's widgets
         self.current_frame = self.pages[page_name](parent=self.container, controller=self)
         self.current_frame.grid(row=0, column=0, sticky=N + E + S + W)
@@ -164,4 +167,3 @@ if __name__ == "__main__":
     os.system('''/usr/bin/osascript -e 'tell app "Finder" to set frontmost of process "Python" to true' ''')
     root.lift()
     root.mainloop()
-
