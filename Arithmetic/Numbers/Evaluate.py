@@ -4,10 +4,11 @@ import operator
 
 OPS = {"+": operator.add, "-": operator.sub, "*": operator.mul, "/ (will round)": operator.floordiv}
 
-
-# First convert both operands to decimal integers, then perform
-# the selected operation and return the expected value.
 def evaluate(op1, op2, op, kind):
+    """Evaluates an expression
+    First convert both operands to decimal integers, then perform
+    the selected operation and return the expected value.
+    """
 
     if kind == "Unsigned Binary":
         temp = OPS[op](int(op1, 2), int(op2, 2))

@@ -1,8 +1,10 @@
 
 
-# Encode the message with a given shift key. Offset each character
-# in the message by 'shift' number of letters in the alphabet
 def encode(plaintext, shift):
+    """Encode plaintext
+    Encode the message with a given shift key. Offset each character
+    in the message by 'shift' number of letters in the alphabet
+    """
 
     ciphertext = ""
 
@@ -17,10 +19,12 @@ def encode(plaintext, shift):
     return ciphertext
 
 
-# Decode the message in either of the cases where
-# the shift key is or is not known. A shift key that isn't known
-# will call the decode_all function to test all possible shifts.
 def decode(ciphertext, shift, known):
+    """Decode ciphertext
+    Decode the message in either of the cases where
+    the shift key is or is not known. A shift key that isn't known
+    will call the decode_all function to test all possible shifts.
+    """
 
     if not known:
         return decode_all(ciphertext)  # decode with all possibilities if shift key is unknown
@@ -38,10 +42,11 @@ def decode(ciphertext, shift, known):
     return plaintext
 
 
-# This function is called when the shift key is unknown.
-# All possible 25 shifts are attempted, each with a
-# different offset in the alphabet.
 def decode_all(ciphertext):
+    """Decode ciphertext when shift key is unknown
+    All possible 25 shifts are attempted, each with a
+    different offset in the alphabet.
+    """
 
     plaintext = ""
 

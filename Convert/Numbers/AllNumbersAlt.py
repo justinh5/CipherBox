@@ -82,9 +82,11 @@ class AllNumbersAlt(Frame):
         self.output.insert(1.0, "Output")
         self.output.configure(state="disabled")
 
-    # Process the inputs before encoding. The key must be
-    # alphabetic with no numbers.
     def click(self):
+        """Process the inputs before encoding
+        The key must be alphabetic with no numbers.
+        """
+
         try:
             x = self.lselect.get()
             y = self.rselect.get()

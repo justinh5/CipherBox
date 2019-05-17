@@ -40,10 +40,11 @@ def encode(string):
     return result
 
 
-# This function decodes a utf-8 hex encoding to a utf-8 decoded string.
-# Unfortunately, there is a limit to how many characters Python can display,
-# and therefore the maximum amount of utf-8 characters it can detect is 1,114,111.
 def decode(string):
+    """Decode utf-8 hex to utf-8 string
+    Unfortunately, there is a limit to how many characters Python can display,
+    and therefore the maximum amount of utf-8 characters it can detect is 1,114,111.
+    """
 
     string = string.replace('\\x', '')   # remove all '\x'
 
@@ -71,4 +72,3 @@ def decode(string):
         i = newi
 
     return result
-

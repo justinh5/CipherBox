@@ -1,17 +1,21 @@
 
 
-# Convert a value from representation x to representation y, where
-# value is any integer representation and x and y can range from base 2-36.
 def convert_numbers(value, x, y):
+    """Convert integer representations
+    Convert a value from representation x to representation y, where
+    value is any integer representation and x and y can range from base 2-36.
+    """
 
     # attempt to convert the value to a decimal integer
     temp = int(value, x)
     return str(base10toN(temp, y))
 
 
-# Convert values between different types of binary representations.
-# Value comes in as x and is returned as y.
 def convert_binary(value, x, y):
+    """Convert binary representations
+    Convert values between different types of binary representations.
+    Value comes in as x and is returned as y.
+    """
 
     if x == "Unsigned":
         temp = int(value, 2)
@@ -36,9 +40,11 @@ def convert_binary(value, x, y):
         return temp
 
 
-# Convert a digital storage value from units x to units y. Value can be any
-# decimal value and x and y are strings that represent the units.
 def convert_dunits(value, x, y):
+    """Convert digital storage units
+    Convert a digital storage value from units x to units y. Value can be any
+    decimal value and x and y are strings that represent the units.
+    """
 
     prefix = {'bit': 1, 'byt': 1, 'kil': 1000, 'kib': 1024, 'meg': 10**6, 'meb': 2**20, 'gig': 10**9,
               'gib': 2**30, 'ter': 10**12, 'teb': 2**40, 'pet': 10**15, 'peb': 2**50}
@@ -60,8 +66,8 @@ def convert_dunits(value, x, y):
         return xbits / prefix[yprefix]
 
 
-# Convert a decimal number (base-10) to a number of any base/radix from 2-36.
 def base10toN(num, base):
+    """Convert a decimal number (base-10) to a number of any base/radix from 2-36."""
 
     digits = "0123456789abcdefghijklmnopqrstuvwxyz"
 
@@ -96,7 +102,6 @@ def twos_to_int(value, bits):
     return value
 
 
-# add a 1 to the front if number is negative
 def int_to_sign_and_mag(value):
     if value < 0:
         return "1" + "{0:b}".format(abs(value))
