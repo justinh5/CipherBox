@@ -4,7 +4,12 @@ Utilities for binary arithmetic, data representation conversions, references, ci
 
 ### How to Use
 
-Navigate to project directory and run with Python 3:
+Navigate to project directory and install requirements
 ```shell
-$ python3 CipherBox.py
+$ pip3 install -r requirements.txt
+```
+
+Run this command
+```shell
+$ ./CipherBox.py
 ```
